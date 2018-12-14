@@ -1,0 +1,41 @@
+body{
+    margin: 0 auto;
+    background-color: #F2C510;
+    font-family: 'Unlock', cursive;
+    color: black;
+}
+h1{
+    font-size: 50px;
+    text-align: center;
+}
+
+#controlGuide{
+    text-align: center;
+    font-family: 'Roboto Mono', monospace;
+}
+
+.gameboy-wrapper{
+    margin: 0 auto;
+    width: 500px;
+    position: relative;
+}
+.gameboy {
+    position: absolute;
+    z-index: -10;
+    
+}
+#game {
+    width: 400px;
+    margin: 0 auto;
+    z-index: 10;
+    padding-top: 34px;
+    /* position: absolute; */
+}
+#control-guide{
+    /*position: absolute;*/
+    top: 40%;
+    left: 30%;
+    z-index: 2;
+    margin: 0 auto;
+
+}
