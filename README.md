@@ -1,4 +1,3 @@
-# week1_project_kelly
 # First Game Project - Donkey Kong!  
 
 The original Donkey Kong game is one of my favorite old-school reminiscent games and I wanted to recreate this in my style. 
@@ -95,6 +94,14 @@ function isOnPlatforms(){
     onPlatforms = false;
 }
 ```
+
+## Creative Tweaks!
+After generating some regular barrels, I thought it was not challenging enough for the player to start from the bottom because all the barrels were thrown from the top and not all of them make it to the bottom! 
+So, I made another kind called, blue barrels, and gave them a different behavior. 
+Blue barrels bounce off the game boundary at higher velocity threfore they reach down a lot faster. 
+In fact, enabling collision against the game world bound for bouncing effect resulted in collecting all barrels in the bottom of the map! 
+I decided to be little creative here by adding a strip of thorn image to kill any sprite (including the player) that overlaps with it. 
+It ended up not only solving the barrel problem but also added some extra fun element to the game! 
 
 ## Conclusion
 I had lots of fun making a game of my choice. I was very excited to witness the changes I make in every step.
