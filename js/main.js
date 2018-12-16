@@ -7,34 +7,34 @@ var game = new Phaser.Game(GAME_WIDTH, GAME_HEIGHT, Phaser.AUTO, 'game', {
 
 function preload() {
 	//load necessary images
-    game.load.image('bg', '../assets/img/background.png');
-    game.load.image('barrel', '../assets/img/barrel.png');
-    game.load.image('blueBarrel', '../assets/img/blue_barrel.png');
-    game.load.image('boxes', '../assets/img/boxes3.png');
-    game.load.image('boxhit', '../assets/img/single_box.png');
-    game.load.image('button', '../assets/img/play_button.png');
-    game.load.image('lady', '../assets/img/princess.png');
-   	game.load.image('ladder', '../assets/img/ladder.png');
-    game.load.image('ladder2', '../assets/img/ladder_piece.png');
-    game.load.image('spikes', '../assets/img/thorn.png');
+    game.load.image('bg', 'https://hayeun7777.github.io/week1_project_kelly/assets/img/background.png');
+    game.load.image('barrel', 'https://hayeun7777.github.io/week1_project_kelly/assets/img/barrel.png');
+    game.load.image('blueBarrel', 'https://hayeun7777.github.io/week1_project_kelly/assets/img/blue_barrel.png');
+    game.load.image('boxes', 'https://hayeun7777.github.io/week1_project_kelly/assets/img/boxes3.png');
+    game.load.image('boxhit', 'https://hayeun7777.github.io/week1_project_kelly/assets/img/single_box.png');
+    game.load.image('button', 'https://hayeun7777.github.io/week1_project_kelly/assets/img/play_button.png');
+    game.load.image('lady', 'https://hayeun7777.github.io/week1_project_kelly/assets/img/princess.png');
+   	game.load.image('ladder', 'https://hayeun7777.github.io/week1_project_kelly/assets/img/ladder.png');
+    game.load.image('ladder2', 'https://hayeun7777.github.io/week1_project_kelly/assets/img/ladder_piece.png');
+    game.load.image('spikes', 'https://hayeun7777.github.io/week1_project_kelly/assets/img/thorn.png');
 
-    game.load.image('replay', '../assets/img/replay.png');
-    game.load.image('winMsg', '../assets/img/winMsg.png');
+    game.load.image('replay', 'https://hayeun7777.github.io/week1_project_kelly/assets/img/replay.png');
+    game.load.image('winMsg', 'https://hayeun7777.github.io/week1_project_kelly/assets/img/winMsg.png');
     //animation characters
-    game.load.spritesheet('donkk', '../assets/img/donkeykong.png', 176, 218, 4);
-    game.load.spritesheet('explode', '../assets/img/explode.png', 300, 260);
-    game.load.spritesheet('heart', '../assets/img/heart.png', 157, 140);
-    game.load.spritesheet('player', '../assets/img/mario2.png', 29, 34);
+    game.load.spritesheet('donkk', 'https://hayeun7777.github.io/week1_project_kelly/assets/img/donkeykong.png', 176, 218, 4);
+    game.load.spritesheet('explode', 'https://hayeun7777.github.io/week1_project_kelly/assets/img/explode.png', 300, 260);
+    game.load.spritesheet('heart', 'https://hayeun7777.github.io/week1_project_kelly/assets/img/heart.png', 157, 140);
+    game.load.spritesheet('player', 'https://hayeun7777.github.io/week1_project_kelly/assets/img/mario2.png', 29, 34);
 
     //load sounds and audio
-    game.load.audio('boom','../assets/audio/explosion.wav');
-    game.load.audio('bacmusic','../assets/audio/bacmusic.wav');
-    game.load.audio('intro','../assets/audio/intro1.wav');
-    game.load.audio('walking','../assets/audio/walking.wav');
-    game.load.audio('jump','../assets/audio/jump.wav');
-    game.load.audio('jumpbar','../assets/audio/jumpbar.wav');
-    game.load.audio('death','../assets/audio/death.wav');
-    game.load.audio('win','../assets/audio/win1.wav');
+    game.load.audio('boom','https://hayeun7777.github.io/week1_project_kelly/assets/audio/explosion.wav');
+    game.load.audio('bacmusic','https://hayeun7777.github.io/week1_project_kelly/assets/audio/bacmusic.wav');
+    game.load.audio('intro','https://hayeun7777.github.io/week1_project_kelly/assets/audio/intro1.wav');
+    game.load.audio('walking','https://hayeun7777.github.io/week1_project_kelly/assets/audio/walking.wav');
+    game.load.audio('jump','https://hayeun7777.github.io/week1_project_kelly/assets/audio/jump.wav');
+    game.load.audio('jumpbar','https://hayeun7777.github.io/week1_project_kelly/assets/audio/jumpbar.wav');
+    game.load.audio('death','https://hayeun7777.github.io/week1_project_kelly/assets/audio/death.wav');
+    game.load.audio('win','https://hayeun7777.github.io/week1_project_kelly/assets/audio/win1.wav');
 
 }
 function create() {
