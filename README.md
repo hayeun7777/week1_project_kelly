@@ -9,11 +9,11 @@ Before decising which game to actually make or recreate, I did a rough search to
 I love to design and create my own stuff but I wanted to spend more time on the game logics in my first project. 
 
 Once I made a decision to build Donkey Kong game, I watched the game on Youtube to analyze and list functions and conditions to create: 
-*Donkey Kong throws the barrels from the top
-*All barrels have to move down (preferably in random patterns)
-*Mario only gets certain amount of lives and he loses one everytime he gets hit by a barrel 
-*Mario must be able to move left and right, and up and down the ladders, and jump over the barrels
-*Mario wins when he meets the princess in the top floor
+1) Donkey Kong throws the barrels from the top,
+2) All barrels have to move down (preferably in random patterns),
+3) Mario only gets certain amount of lives and he loses one everytime he gets hit by a barrel, 
+4) Mario must be able to move left and right, and up and down the ladders, and jump over the barrels,
+5) Mario wins when he meets the princess in the top floor
     
 *Forgot what the original game looks like?* 
 Here is the link!
