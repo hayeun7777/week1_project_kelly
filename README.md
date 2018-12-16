@@ -9,14 +9,15 @@ Before decising which game to actually make or recreate, I did a rough search to
 I love to design and create my own stuff but I wanted to spend more time on the game logics in my first project. 
 
 Once I made a decision to build Donkey Kong game, I watched the game on Youtube to analyze and list functions and conditions to create: 
-    * Donkey Kong throws the barrels from the top
-    * All barrels have to move down (preferably in random patterns)
-    * Mario only gets certain amount of lives and he loses one everytime he gets hit by a barrel 
-    * Mario must be able to move left and right, and up and down the ladders, and jump over the barrels
-    * Mario wins when he meets the princess in the top floor
+*Donkey Kong throws the barrels from the top
+*All barrels have to move down (preferably in random patterns)
+*Mario only gets certain amount of lives and he loses one everytime he gets hit by a barrel 
+*Mario must be able to move left and right, and up and down the ladders, and jump over the barrels
+*Mario wins when he meets the princess in the top floor
     
 *Forgot what the original game looks like?* 
-Here is the link! [DONKEY KONG] (https://www.youtube.com/watch?v=U24OcmpZ6fA)
+Here is the link!
+https://www.youtube.com/watch?v=U24OcmpZ6fA
 
     
 Plus, as this is an old-school game from "back in the day", I wanted to maintain the vintage vibes through 8-bit graphic/animations, sounds, and the background of the webpage. 
@@ -109,7 +110,9 @@ It was an awesome opportunity to develop my thinking process more like a develop
 The game logic literally requires every single steps of 'do's and 'don't's of every single sprites that make interactions in the game.
 Another fun part was that I was able to come up with multiple alternatives to make the logic work. 
 If one approach doesn't do the trick, I could make it work with anoter approach eventually! (second pair of eyes help!!) - there is no right or wrong way of doing it. 
- 
+
+
+
 ## Built With: 
 * HTML
 * CSS
