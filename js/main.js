@@ -7,39 +7,43 @@ var game = new Phaser.Game(GAME_WIDTH, GAME_HEIGHT, Phaser.AUTO, 'game', {
 
 function preload() {
 	//load necessary images
-    game.load.image('bg', 'https://hayeun7777.github.io/week1_project_kelly/assets/img/background.png');
-    game.load.image('barrel', 'https://hayeun7777.github.io/week1_project_kelly/assets/img/barrel.png');
-    game.load.image('bacBottom', 'https://hayeun7777.github.io/week1_project_kelly/assets/img/background_bottom.png');
-    game.load.image('blueBarrel', 'https://hayeun7777.github.io/week1_project_kelly/assets/img/blue_barrel.png');
-    game.load.image('boxes', 'https://hayeun7777.github.io/week1_project_kelly/assets/img/boxes3.png');
-    game.load.image('button', 'https://hayeun7777.github.io/week1_project_kelly/assets/img/play_button.png');
-    game.load.image('lady', 'https://hayeun7777.github.io/week1_project_kelly/assets/img/princess.png');
-   	game.load.image('ladder', 'https://hayeun7777.github.io/week1_project_kelly/assets/img/ladder.png');
-    game.load.image('ladder2', 'https://hayeun7777.github.io/week1_project_kelly/assets/img/ladder_piece.png');
-    game.load.image('boxhit', 'https://hayeun7777.github.io/week1_project_kelly/assets/img/single_box.png');
-    game.load.image('replay', 'https://hayeun7777.github.io/week1_project_kelly/assets/img/replay.png');
-    game.load.image('winMsg', 'https://hayeun7777.github.io/week1_project_kelly/assets/img/winMsg.png');
+    game.load.image('bg', '../assets/img/background.png');
+    game.load.image('barrel', '../assets/img/barrel.png');
+    game.load.image('blueBarrel', '../assets/img/blue_barrel.png');
+    game.load.image('boxes', '../assets/img/boxes3.png');
+    game.load.image('boxhit', '../assets/img/single_box.png');
+    game.load.image('button', '../assets/img/play_button.png');
+    game.load.image('lady', '../assets/img/princess.png');
+   	game.load.image('ladder', '../assets/img/ladder.png');
+    game.load.image('ladder2', '../assets/img/ladder_piece.png');
+    game.load.image('spikes', '../assets/img/thorn.png');
+
+    game.load.image('replay', '../assets/img/replay.png');
+    game.load.image('winMsg', '../assets/img/winMsg.png');
     //animation characters
-    game.load.spritesheet('donkk', 'https://hayeun7777.github.io/week1_project_kelly/assets/img/donkeykong.png', 176, 218, 4);
-    game.load.spritesheet('explode', 'https://hayeun7777.github.io/week1_project_kelly/assets/img/explode.png', 300, 260);
-    game.load.spritesheet('heart', 'https://hayeun7777.github.io/week1_project_kelly/assets/img/heart.png', 157, 140);
-    game.load.spritesheet('player', 'https://hayeun7777.github.io/week1_project_kelly/assets/img/mario2.png', 29, 34);
+    game.load.spritesheet('donkk', '../assets/img/donkeykong.png', 176, 218, 4);
+    game.load.spritesheet('explode', '../assets/img/explode.png', 300, 260);
+    game.load.spritesheet('heart', '../assets/img/heart.png', 157, 140);
+    game.load.spritesheet('player', '../assets/img/mario2.png', 29, 34);
 
     //load sounds and audio
-    game.load.audio('boom','https://hayeun7777.github.io/week1_project_kelly/assets/audio/explosion.wav');
-    game.load.audio('bacmusic','https://hayeun7777.github.io/week1_project_kelly/assets/audio/bacmusic.wav');
-    game.load.audio('intro','https://hayeun7777.github.io/week1_project_kelly/assets/audio/intro1.wav');
-    game.load.audio('walking','https://hayeun7777.github.io/week1_project_kelly/assets/audio/walking.wav');
-    game.load.audio('jump','https://hayeun7777.github.io/week1_project_kelly/assets/audio/jump.wav');
-    game.load.audio('jumpbar','https://hayeun7777.github.io/week1_project_kelly/assets/audio/jumpbar.wav');
-    game.load.audio('death','https://hayeun7777.github.io/week1_project_kelly/assets/audio/death.wav');
-    game.load.audio('win','https://hayeun7777.github.io/week1_project_kelly/assets/audio/win1.wav');
+    game.load.audio('boom','../assets/audio/explosion.wav');
+    game.load.audio('bacmusic','../assets/audio/bacmusic.wav');
+    game.load.audio('intro','../assets/audio/intro1.wav');
+    game.load.audio('walking','../assets/audio/walking.wav');
+    game.load.audio('jump','../assets/audio/jump.wav');
+    game.load.audio('jumpbar','../assets/audio/jumpbar.wav');
+    game.load.audio('death','../assets/audio/death.wav');
+    game.load.audio('win','../assets/audio/win1.wav');
 
 }
 function create() {
 
 	//Enabling Arcade Physics system
 	game.physics.startSystem(Phaser.Physics.ARCADE);
+    //setting new bounds for the game 
+    // game.physics.arcade.setBounds(0, 0, 410, 630);
+
     //game.physics.arcade.checkCollision.down = false;
 	var background = game.add.tileSprite(0, 0, game.width, game.height, 'bg'); 
 	//add audios
@@ -66,15 +70,17 @@ function create() {
     princess.scale.setTo(1.3, 1.3);
     game.physics.enable(princess, Phaser.Physics.ARCADE);
 
-    bacBottom = game.add.sprite(0, 620, 'bacBottom');
-    game.physics.enable(bacBottom, Phaser.Physics.ARCADE);
-    bacBottom.body.gravity = 0;
+    //spikes to kill sprites that fall down 
+    spikes = game.add.sprite(0, 610, 'spikes');
+    game.physics.enable(spikes, Phaser.Physics.ARCADE);
+    spikes.scale.setTo(0.4, 0.4);
+    spikes.body.gravity = 0;
 
     //create barrels group object
     barrels = addGroup(barrels, 10, 'barrel');
     barrels.scale.setTo(1.2, 1.2);
 
-    blueBarrels = addGroup(blueBarrels, 20, 'blueBarrel');
+    blueBarrels = addGroup(blueBarrels, 30, 'blueBarrel');
     blueBarrels.scale.setTo(1.2, 1.2);
     game.physics.enable(blueBarrels, Phaser.Physics.ARCADE);
 
@@ -110,22 +116,18 @@ function create() {
     ledge.body.immovable = true;
 
 	ledge = platforms.create(100, 150, 'boxes');
-   // game.add.tween(ledge).to( { angle: -3 }, 1000, Phaser.Easing.Linear.None, true);
     ledge.scale.setTo(0.8, 0.8);
     ledge.body.immovable = true;
 
     ledge = platforms.create(180, 230, 'boxes');
-   // game.add.tween(ledge).to( { angle: -3 }, 1000, Phaser.Easing.Linear.None, true);
     ledge.scale.setTo(0.8, 0.8);
     ledge.body.immovable = true;
 
     ledge = platforms.create(-150, 310, 'boxes');
-   // game.add.tween(ledge).to( { angle: 3 }, 1000, Phaser.Easing.Linear.None, true);
     ledge.scale.setTo(0.8, 0.8);
     ledge.body.immovable = true;
 
     ledge = platforms.create(200, 420, 'boxes');
-  //  game.add.tween(ledge).to( { angle: -3 }, 1000, Phaser.Easing.Linear.None, true);
     ledge.scale.setTo(0.8, 0.8);
     ledge.body.immovable = true;
 
@@ -262,6 +264,7 @@ function create() {
   	cursors = game.input.keyboard.createCursorKeys();
   	//adding SPACE bar for the jump
 	jumpButton = game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
+
     //play button with action
     button = game.add.button(game.world.centerX - 140, 250, 'button', actionOnClick);
    
@@ -277,7 +280,7 @@ function create() {
     }
 
     window.addEventListener('keydown', function(e){
-        //spacebar has keyCode of 32
+    //Spacebar has keyCode of 32
     if(e.keyCode === 32){
         jumpCounter++;
         console.log(jumpCounter);
@@ -290,6 +293,12 @@ function create() {
         }
     }
     })
+    //pause the game with the Enter Key
+    window.onkeydown = function() {
+            if (game.input.keyboard.event.keyCode == 13){
+                game.paused = !game.paused;
+            }
+        }
 
     //display player.life
     createText();
@@ -315,7 +324,6 @@ else if(startGame){
     onLadders = false;
     onPlatforms = true;
     barrelsOnLadders = false;
-    reachedEnd = false;
     player.body.gravity.y = GRAVITY;
     
     ladders.forEach(function(ladder){
@@ -395,13 +403,13 @@ else if(startGame){
     });
 
     blueBarrels.forEach(function(blueBarrel){
-        game.physics.arcade.overlap(blueBarrel, bacBottom, removeBlueBarrels);
-        
+        game.physics.arcade.overlap(blueBarrel, spikes, removeBlueBarrels);
     })
 
    game.physics.arcade.overlap(player, princess, winCeremony);
    game.physics.arcade.overlap(player, barrels, damagePlayer);
    game.physics.arcade.overlap(player, blueBarrels, damagePlayer);
+   game.physics.arcade.overlap(player, spikes, killPlayer);
 
 }
 }
@@ -437,19 +445,31 @@ function moveBarrels(barrel, boxesHit){
     }
 }
 
-function reachedEnd(){
-    reachedEnd = true;
-}
-
 function removeBlueBarrels(blueBarrel){
     blueBarrel.destroy();
 }
 
+function killPlayer(){
+player.kill();
+        gameOver();
+        dead.play();
+        replay = game.add.button(game.world.centerX - 140, 250, 'replay', actionOnClick);
+    function actionOnClick(){
+    //button disappears
+    replay.destroy();
+    startGame = true;
+    player.reset(PLAYER_START.x, PLAYER_START.y);
+    player.life = PLAYER_LIFE;
+    backgroundMusic = setInterval(function(){ bacmusic.play(); }, 1150);
+    }   
+}
+
+
 // function render(){
 
-//     game.debug.body(bacBottom);
+//     game.debug.body();
  
-//      // boxesHit.forEach(function(boxhit){
-//      //    game.debug.body(boxhit);
-//      // });
+// //      // boxesHit.forEach(function(boxhit){
+// //      //    game.debug.body(boxhit);
+// //      // });
 // }

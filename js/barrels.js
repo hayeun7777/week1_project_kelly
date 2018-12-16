@@ -36,18 +36,7 @@ function damagePlayer(p, barrel, blueBarrel){
 		textLife.text = '💓 X ' + player.life; 
 		//when he is done with his life count, game is over
 		if (player.life <= 0){
-			player.kill();
-			gameOver();
-			dead.play();
-			replay = game.add.button(game.world.centerX - 140, 250, 'replay', actionOnClick);
-		function actionOnClick(){
-		//button disappears
-		replay.destroy();
-		startGame = true;
-		player.reset(PLAYER_START.x, PLAYER_START.y);
-	    player.life = PLAYER_LIFE;
-	    backgroundMusic = setInterval(function(){ bacmusic.play(); }, 1150);
-		}					
+			killPlayer();				
 		}
 }
 
@@ -71,7 +60,6 @@ function winCeremony(p, princess){
 	}
 }
 
-
 function explode(){
 	explosion.x = player.x;
 	explosion.y = player.y;
@@ -92,4 +80,3 @@ function heartFinished(beat, animation){
     heart.visible = false;
     heart.animations.stop(null, true);
 }
-

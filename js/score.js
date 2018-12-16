@@ -6,7 +6,5 @@ function createText(){
 function gameOver(){
 startGame = false;
 clearInterval(backgroundMusic);
-// game.time.events.remove(spawnBarrels);
-// game.time.events.remove(spawnBlueBarrels);
 }
 

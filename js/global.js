@@ -24,7 +24,6 @@ var death;
 var winSong;
 
 //global variables 
-var bacBottom;
 var backgroundMusic;
 var barrels;
 var barrelLanded = false;
@@ -46,4 +45,5 @@ var onPlatforms = true;
 var player;
 var princess;
 var reachedEnd;
+var spikes;
 var textLife;
