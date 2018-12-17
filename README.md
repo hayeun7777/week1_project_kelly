@@ -103,6 +103,8 @@ Blue barrels bounce off the game boundary at higher velocity threfore they reach
 In fact, enabling collision against the game world bound for bouncing effect resulted in collecting all barrels in the bottom of the map! 
 I decided to be little creative here by adding a strip of thorn image to kill any sprite (including the player) that overlaps with it. 
 It ended up not only solving the barrel problem but also added some extra fun element to the game! 
+<br> 
+Another interesting invisible feature I implemented in this game is a single ledge box adjacent to each ladder. After making the brown(regular) barrel to move down ladders, all barrels just stopped moving and stayed stagnant under the ladder (lost their x and y velocity). So I put a single box image to overlap a part of the ledge to "move barrels" again. 
 
 ## Conclusion
 I had lots of fun making a game of my choice. I was very excited to witness the changes I make in every step.
